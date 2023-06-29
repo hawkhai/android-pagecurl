@@ -93,7 +93,7 @@ public class CurlRenderer implements GLSurfaceView.Renderer {
     @Override
     public synchronized void onDrawFrame(GL10 gl) {
 
-        mObserver.onDrawFrame();
+        mObserver.onkDrawFrame();
 
         gl.glClearColor(Color.red(mBackgroundColor) / 255f,
                 Color.green(mBackgroundColor) / 255f,
@@ -148,7 +148,7 @@ public class CurlRenderer implements GLSurfaceView.Renderer {
         gl.glDisable(GL10.GL_DEPTH_TEST);
         gl.glDisable(GL10.GL_CULL_FACE);
 
-        mObserver.onSurfaceCreated();
+        mObserver.onkSurfaceCreated();
     }
 
     /**
@@ -221,7 +221,7 @@ public class CurlRenderer implements GLSurfaceView.Renderer {
                     .width());
             int bitmapH = (int) ((mPageRectRight.height() * mViewportHeight) / mViewRect
                     .height());
-            mObserver.onPageSizeChanged(bitmapW, bitmapH);
+            mObserver.onkPageSizeChanged(bitmapW, bitmapH);
         } else if (mViewMode == SHOW_TWO_PAGES) {
             mPageRectRight.set(mViewRect);
             mPageRectRight.left += mViewRect.width() * mMargins.left;
@@ -237,7 +237,7 @@ public class CurlRenderer implements GLSurfaceView.Renderer {
                     .width());
             int bitmapH = (int) ((mPageRectRight.height() * mViewportHeight) / mViewRect
                     .height());
-            mObserver.onPageSizeChanged(bitmapW, bitmapH);
+            mObserver.onkPageSizeChanged(bitmapW, bitmapH);
         }
     }
 
@@ -249,18 +249,18 @@ public class CurlRenderer implements GLSurfaceView.Renderer {
          * Called from onDrawFrame called before rendering is started. This is
          * intended to be used for animation purposes.
          */
-        void onDrawFrame();
+        void onkDrawFrame();
 
         /**
          * Called once page size is changed. Width and height tell the page size
          * in pixels making it possible to update textures accordingly.
          */
-        void onPageSizeChanged(int width, int height);
+        void onkPageSizeChanged(int width, int height);
 
         /**
          * Called from onSurfaceCreated to enable texture re-initialization etc
          * what needs to be done when this happens.
          */
-        void onSurfaceCreated();
+        void onkSurfaceCreated();
     }
 }

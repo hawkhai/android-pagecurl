@@ -159,7 +159,7 @@ public class CurlView extends GLSurfaceView implements View.OnTouchListener,
     }
 
     @Override
-    public void onDrawFrame() {
+    public void onkDrawFrame() {
         // We are not animating.
         if (mAnimate == false) {
             return;
@@ -214,7 +214,7 @@ public class CurlView extends GLSurfaceView implements View.OnTouchListener,
     }
 
     @Override
-    public void onPageSizeChanged(int width, int height) {
+    public void onkPageSizeChanged(int width, int height) {
         mPageBitmapWidth = width;
         mPageBitmapHeight = height;
         updatePages();
@@ -231,7 +231,7 @@ public class CurlView extends GLSurfaceView implements View.OnTouchListener,
     }
 
     @Override
-    public void onSurfaceCreated() {
+    public void onkSurfaceCreated() {
         // In case surface is recreated, let page meshes drop allocated texture
         // ids and ask for new ones. There's no need to set textures here as
         // onPageSizeChanged should be called later on.
