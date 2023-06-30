@@ -12,7 +12,6 @@ import android.webkit.WebViewClient;
 import android.widget.BaseAdapter;
 
 import com.aphidmobile.flip.FlipViewController;
-import com.aphidmobile.flipview.demo.R;
 
 import java.util.ArrayList;
 import java.util.List;

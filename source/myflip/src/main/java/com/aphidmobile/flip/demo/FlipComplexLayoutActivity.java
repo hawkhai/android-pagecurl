@@ -22,7 +22,6 @@ import android.os.Bundle;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.adapter.TravelAdapter;
-import com.aphidmobile.flipview.demo.R;
 
 public class FlipComplexLayoutActivity extends Activity {
 

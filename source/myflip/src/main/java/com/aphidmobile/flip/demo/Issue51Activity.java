@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.aphidmobile.flip.FlipViewController;
-import com.aphidmobile.flipview.demo.R;
 
 /*
 Copyright 2012 Aphid Mobile

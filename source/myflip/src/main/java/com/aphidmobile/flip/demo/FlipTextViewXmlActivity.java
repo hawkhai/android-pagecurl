@@ -24,7 +24,6 @@ import android.widget.BaseAdapter;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.views.NumberTextView;
-import com.aphidmobile.flipview.demo.R;
 
 /**
  * @author Paul Burke paulburke.co

@@ -37,7 +37,10 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 
 import com.aphidmobile.utils.AphidLog;
-import com.openaphid.flip.R;
+import com.cfgame.myflip.R;
+//import com.openaphid.flip.R;
+
+//import junit.framework.Assert;
 
 import junit.framework.Assert;
 
@@ -546,7 +549,7 @@ public class FlipViewController extends AdapterView<Adapter> {
                    adapterIndex);
       }
     } else {
-      Assert.fail("Invalid indexInAdapter: " + indexInAdapter);
+      //Assert.fail("Invalid indexInAdapter: " + indexInAdapter);
     }
     //debugBufferedViews();
   }

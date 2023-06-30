@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.adapter.TravelAdapter;
-import com.aphidmobile.flipview.demo.R;
 
 /*
 Copyright 2012 Aphid Mobile

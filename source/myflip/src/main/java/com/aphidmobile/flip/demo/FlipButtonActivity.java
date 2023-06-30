@@ -25,7 +25,6 @@ import android.widget.BaseAdapter;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.views.NumberButton;
-import com.aphidmobile.flipview.demo.R;
 
 public class FlipButtonActivity extends Activity {
 

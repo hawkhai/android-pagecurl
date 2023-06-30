@@ -27,7 +27,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.aphidmobile.flipview.demo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

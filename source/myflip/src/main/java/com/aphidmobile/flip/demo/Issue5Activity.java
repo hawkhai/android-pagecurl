@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.issue5.GalleryFlipAdapter;
-import com.aphidmobile.flipview.demo.R;
 
 public class Issue5Activity extends Activity {
 

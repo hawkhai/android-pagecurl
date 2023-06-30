@@ -18,11 +18,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aphidmobile.flip.FlipViewController;
-import com.aphidmobile.flipview.demo.R;
+
 import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.IO;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

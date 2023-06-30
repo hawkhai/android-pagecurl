@@ -2,15 +2,16 @@ package com.aphidmobile.flip.demo.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+//import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import androidx.fragment.app.Fragment;
+
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.views.NumberTextView;
-import com.aphidmobile.flipview.demo.R;
 
 /*
 Copyright 2012 Aphid Mobile

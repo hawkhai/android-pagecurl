@@ -24,6 +24,8 @@ import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.TextureUtils;
 import com.aphidmobile.utils.UI;
 
+//import junit.framework.Assert;
+
 import junit.framework.Assert;
 
 import javax.microedition.khronos.opengles.GL10;

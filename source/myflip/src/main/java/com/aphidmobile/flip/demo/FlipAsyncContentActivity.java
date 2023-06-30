@@ -40,7 +40,7 @@ import android.widget.TextView;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.data.Travels;
-import com.aphidmobile.flipview.demo.R;
+
 import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.IO;
 import com.aphidmobile.utils.UI;

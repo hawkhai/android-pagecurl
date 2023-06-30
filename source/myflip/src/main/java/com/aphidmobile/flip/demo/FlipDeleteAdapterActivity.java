@@ -24,7 +24,6 @@ import android.view.MenuItem;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.adapter.TravelAdapter;
-import com.aphidmobile.flipview.demo.R;
 
 public class FlipDeleteAdapterActivity extends Activity {
 
