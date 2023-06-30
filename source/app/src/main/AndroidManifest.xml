@@ -9,14 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pagecurl">
-        <activity android:name="se.emilsjolander.flipview.MainActivity" android:exported="true"
+
+        <activity android:name="com.aphidmobile.flip.demo.MainActivity" android:exported="true"
             >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name="com.aphidmobile.flip.demo.FlipTextViewActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipButtonActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipComplexLayoutActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipDeleteAdapterActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipAsyncContentActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipTextViewAltActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipHorizontalLayoutActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipTextViewXmlActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.Issue5Activity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipFragmentActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipDynamicAdapterActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.FlipWebViewActivity"/>
+        <activity android:name="com.aphidmobile.flip.demo.Issue51Activity"/>
+
     </application>
 
 </manifest>
