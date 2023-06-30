@@ -22,40 +22,41 @@ import android.os.Bundle;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.adapter.TravelAdapter;
+import com.cfgame.myflip.R;
 
 public class FlipComplexLayoutActivity extends Activity {
 
-  private FlipViewController flipView;
+    private FlipViewController flipView;
 
-  /**
-   * Called when the activity is first created.
-   */
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    setTitle(R.string.activity_title);
+        setTitle(R.string.activity_title);
 
-    flipView = new FlipViewController(this);
+        flipView = new FlipViewController(this);
 
-    //Use RGB_565 can reduce peak memory usage on large screen device, but it's up to you to choose the best bitmap format 
-    flipView.setAnimationBitmapFormat(Bitmap.Config.RGB_565);
+        //Use RGB_565 can reduce peak memory usage on large screen device, but it's up to you to choose the best bitmap format
+        flipView.setAnimationBitmapFormat(Bitmap.Config.RGB_565);
 
-    flipView.setAdapter(new TravelAdapter(this));
+        flipView.setAdapter(new TravelAdapter(this));
 
-    setContentView(flipView);
-  }
+        setContentView(flipView);
+    }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-    flipView.onResume();
-  }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        flipView.onResume();
+    }
 
-  @Override
-  protected void onPause() {
-    super.onPause();
-    flipView.onPause();
-  }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        flipView.onPause();
+    }
 
 }

@@ -21,36 +21,37 @@ import android.os.Bundle;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.adapter.TravelAdapter;
+import com.cfgame.myflip.R;
 
 public class FlipHorizontalLayoutActivity extends Activity {
 
-  private FlipViewController flipView;
+    private FlipViewController flipView;
 
-  /**
-   * Called when the activity is first created.
-   */
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    setTitle(R.string.activity_title);
+        setTitle(R.string.activity_title);
 
-    flipView = new FlipViewController(this, FlipViewController.HORIZONTAL);
+        flipView = new FlipViewController(this, FlipViewController.HORIZONTAL);
 
-    flipView.setAdapter(new TravelAdapter(this));
+        flipView.setAdapter(new TravelAdapter(this));
 
-    setContentView(flipView);
-  }
+        setContentView(flipView);
+    }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-    flipView.onResume();
-  }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        flipView.onResume();
+    }
 
-  @Override
-  protected void onPause() {
-    super.onPause();
-    flipView.onPause();
-  }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        flipView.onPause();
+    }
 }

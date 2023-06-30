@@ -2,7 +2,6 @@ package com.aphidmobile.flip.demo.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-//import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,9 @@ import androidx.fragment.app.Fragment;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.views.NumberTextView;
+import com.cfgame.myflip.R;
+
+//import android.support.v4.app.Fragment;
 
 /*
 Copyright 2012 Aphid Mobile
@@ -31,63 +33,63 @@ limitations under the License.
  */
 public class FlipTextViewFragment extends Fragment {
 
-  private FlipViewController flipView;
+    private FlipViewController flipView;
 
-  @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           Bundle savedInstanceState) {
-    flipView = new FlipViewController(inflater.getContext());
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        flipView = new FlipViewController(inflater.getContext());
 
-    flipView.setAdapter(new BaseAdapter() {
-      @Override
-      public int getCount() {
-        return 10;
-      }
+        flipView.setAdapter(new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return 10;
+            }
 
-      @Override
-      public Object getItem(int position) {
-        return position;
-      }
+            @Override
+            public Object getItem(int position) {
+                return position;
+            }
 
-      @Override
-      public long getItemId(int position) {
-        return position;
-      }
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
 
-      @Override
-      public View getView(int position, View convertView, ViewGroup parent) {
-        NumberTextView view;
-        if (convertView == null) {
-          final Context context = parent.getContext();
-          view = new NumberTextView(context, position);
-          view.setTextSize(context.getResources().getDimension(R.dimen.textSize));
-        } else {
-          view = (NumberTextView) convertView;
-          view.setNumber(position);
-        }
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                NumberTextView view;
+                if (convertView == null) {
+                    final Context context = parent.getContext();
+                    view = new NumberTextView(context, position);
+                    view.setTextSize(context.getResources().getDimension(R.dimen.textSize));
+                } else {
+                    view = (NumberTextView) convertView;
+                    view.setNumber(position);
+                }
 
-        return view;
-      }
-    });
+                return view;
+            }
+        });
 
-    return flipView;
-  }
+        return flipView;
+    }
 
-  @Override
-  public void onResume() {
-    super.onResume();
-    flipView.onResume();
-  }
+    @Override
+    public void onResume() {
+        super.onResume();
+        flipView.onResume();
+    }
 
-  @Override
-  public void onPause() {
-    super.onPause();
-    flipView.onPause();
-  }
+    @Override
+    public void onPause() {
+        super.onPause();
+        flipView.onPause();
+    }
 
-  @Override
-  public void onDestroyView() {
-    super.onDestroyView();
-    flipView = null;
-  }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        flipView = null;
+    }
 }

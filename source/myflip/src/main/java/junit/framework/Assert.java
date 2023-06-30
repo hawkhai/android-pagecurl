@@ -19,4 +19,7 @@ public class Assert {
 
     public static void assertTrue(boolean forward) {
     }
-};
+
+    public static void assertNotNull(String url) {
+    }
+}

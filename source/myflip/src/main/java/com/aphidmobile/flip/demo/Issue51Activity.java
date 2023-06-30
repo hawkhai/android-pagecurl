@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.aphidmobile.flip.FlipViewController;
+import com.cfgame.myflip.R;
 
 /*
 Copyright 2012 Aphid Mobile
@@ -28,64 +29,64 @@ limitations under the License.
  */
 public class Issue51Activity extends Activity {
 
-  private FlipViewController flipView;
+    private FlipViewController flipView;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setTitle(R.string.activity_title);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle(R.string.activity_title);
 
-    flipView = new FlipViewController(this);
+        flipView = new FlipViewController(this);
 
-    flipView.setAdapter(new MyBaseAdapter(this));
+        flipView.setAdapter(new MyBaseAdapter(this));
 
-    setContentView(flipView);
-  }
-
-  @Override
-  protected void onResume() {
-    super.onResume();
-    flipView.onResume();
-  }
-
-  @Override
-  protected void onPause() {
-    super.onPause();
-    flipView.onPause();
-  }
-
-  private static class MyBaseAdapter extends BaseAdapter {
-
-    private LayoutInflater inflater;
-
-    private MyBaseAdapter(Context context) {
-      inflater = LayoutInflater.from(context);
+        setContentView(flipView);
     }
 
     @Override
-    public int getCount() {
-      return 3;
+    protected void onResume() {
+        super.onResume();
+        flipView.onResume();
     }
 
     @Override
-    public Object getItem(int position) {
-      return position;
+    protected void onPause() {
+        super.onPause();
+        flipView.onPause();
     }
 
-    @Override
-    public long getItemId(int position) {
-      return position;
-    }
+    private static class MyBaseAdapter extends BaseAdapter {
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-      if (position == 0) {
-        return inflater.inflate(R.layout.page1, null);
-      } else if (position == 1) {
-        return inflater.inflate(R.layout.page2, null);
-      } else {
-        return inflater.inflate(R.layout.page3, null);
-      }
+        private final LayoutInflater inflater;
+
+        private MyBaseAdapter(Context context) {
+            inflater = LayoutInflater.from(context);
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (position == 0) {
+                return inflater.inflate(R.layout.page1, null);
+            } else if (position == 1) {
+                return inflater.inflate(R.layout.page2, null);
+            } else {
+                return inflater.inflate(R.layout.page3, null);
+            }
+        }
     }
-  }
 }

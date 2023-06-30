@@ -24,69 +24,70 @@ import android.widget.BaseAdapter;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.aphidmobile.flip.demo.views.NumberTextView;
+import com.cfgame.myflip.R;
 
 /**
  * @author Paul Burke paulburke.co
  */
 public class FlipTextViewXmlActivity extends FlipTextViewActivity {
 
-  protected FlipViewController flipView;
+    protected FlipViewController flipView;
 
-  /**
-   * Called when the activity is first created.
-   */
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    setTitle(R.string.activity_title);
-    setContentView(R.layout.xml_layout);
+        setTitle(R.string.activity_title);
+        setContentView(R.layout.xml_layout);
 
-    flipView = (FlipViewController) findViewById(R.id.flipView);
+        flipView = (FlipViewController) findViewById(R.id.flipView);
 
-    flipView.setAdapter(new BaseAdapter() {
-      @Override
-      public int getCount() {
-        return 10;
-      }
+        flipView.setAdapter(new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return 10;
+            }
 
-      @Override
-      public Object getItem(int position) {
-        return position;
-      }
+            @Override
+            public Object getItem(int position) {
+                return position;
+            }
 
-      @Override
-      public long getItemId(int position) {
-        return position;
-      }
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
 
-      @Override
-      public View getView(int position, View convertView, ViewGroup parent) {
-        NumberTextView view;
-        if (convertView == null) {
-          final Context context = parent.getContext();
-          view = new NumberTextView(context, position);
-          view.setTextSize(context.getResources().getDimension(R.dimen.textSize));
-        } else {
-          view = (NumberTextView) convertView;
-          view.setNumber(position);
-        }
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                NumberTextView view;
+                if (convertView == null) {
+                    final Context context = parent.getContext();
+                    view = new NumberTextView(context, position);
+                    view.setTextSize(context.getResources().getDimension(R.dimen.textSize));
+                } else {
+                    view = (NumberTextView) convertView;
+                    view.setNumber(position);
+                }
 
-        return view;
-      }
-    });
-  }
+                return view;
+            }
+        });
+    }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-    flipView.onResume();
-  }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        flipView.onResume();
+    }
 
-  @Override
-  protected void onPause() {
-    super.onPause();
-    flipView.onPause();
-  }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        flipView.onPause();
+    }
 
 }

@@ -23,27 +23,27 @@ import android.widget.TextView;
 
 public class NumberTextView extends TextView {
 
-  private int number;
+    private int number;
 
-  public NumberTextView(Context context, int number) {
-    super(context);
-    setNumber(number);
-    setTextColor(Color.BLACK);
-    setBackgroundColor(Color.WHITE);
-    setGravity(Gravity.CENTER);
-  }
+    public NumberTextView(Context context, int number) {
+        super(context);
+        setNumber(number);
+        setTextColor(Color.BLACK);
+        setBackgroundColor(Color.WHITE);
+        setGravity(Gravity.CENTER);
+    }
 
-  public int getNumber() {
-    return number;
-  }
+    public int getNumber() {
+        return number;
+    }
 
-  public void setNumber(int number) {
-    this.number = number;
-    setText(String.valueOf(number));
-  }
+    public void setNumber(int number) {
+        this.number = number;
+        setText(String.valueOf(number));
+    }
 
-  @Override
-  public String toString() {
-    return "NumberTextView: " + number;
-  }
+    @Override
+    public String toString() {
+        return "NumberTextView: " + number;
+    }
 }
