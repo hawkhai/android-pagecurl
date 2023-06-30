@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.cfgame.mylibrary.R;
+
 import se.emilsjolander.flipview.FlipAdapter.Callback;
 import se.emilsjolander.flipview.FlipView.OnFlipListener;
 import se.emilsjolander.flipview.FlipView.OnOverFlipListener;
@@ -40,10 +42,9 @@ public class MainActivity extends Activity implements Callback, OnFlipListener, 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.prepend:
-                mAdapter.addItemsBefore(5);
-                return true;
+        if (item.getItemId() == R.id.prepend) {
+            mAdapter.addItemsBefore(5);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

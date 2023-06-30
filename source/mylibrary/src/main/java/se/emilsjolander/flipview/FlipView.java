@@ -15,8 +15,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.VelocityTrackerCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -29,7 +27,15 @@ import android.widget.FrameLayout;
 import android.widget.ListAdapter;
 import android.widget.Scroller;
 
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.VelocityTrackerCompat;
+
+import com.cfgame.mylibrary.R;
+
 import se.emilsjolander.flipview.Recycler.Scrap;
+
+//import android.support.v4.view.MotionEventCompat;
+//import android.support.v4.view.VelocityTrackerCompat;
 
 public class FlipView extends FrameLayout {
 
@@ -52,13 +58,28 @@ public class FlipView extends FrameLayout {
     @SuppressWarnings("unused")
     private static final int HORIZONTAL_FLIP = 1;
     private final Interpolator flipInterpolator = new DecelerateInterpolator();
+    private final TimeInterpolator mPeakInterpolator = new AccelerateDecelerateInterpolator();
+    private final boolean mIsFlippingEnabled = true;
+    private final Page mPreviousPage = new Page();
+    private final Page mCurrentPage = new Page();
+    private final Page mNextPage = new Page();
+    // clipping rects
+    private final Rect mTopRect = new Rect();
+    private final Rect mBottomRect = new Rect();
+    private final Rect mRightRect = new Rect();
+    private final Rect mLeftRect = new Rect();
+    // used for transforming the canvas
+    private final Camera mCamera = new Camera();
+    private final Matrix mMatrix = new Matrix();
+    // paints drawn above views when flipping
+    private final Paint mShadowPaint = new Paint();
+    private final Paint mShadePaint = new Paint();
+    private final Paint mShinePaint = new Paint();
     private Scroller mScroller;
     private ValueAnimator mPeakAnim;
-    private final TimeInterpolator mPeakInterpolator = new AccelerateDecelerateInterpolator();
     private boolean mIsFlippingVertically = true;
     private boolean mIsFlipping;
     private boolean mIsUnableToFlip;
-    private final boolean mIsFlippingEnabled = true;
     private boolean mLastTouchAllowed = true;
     private int mTouchSlop;
     private boolean mIsOverFlipping;
@@ -74,9 +95,6 @@ public class FlipView extends FrameLayout {
     private Recycler mRecycler = new Recycler();
     private ListAdapter mAdapter;
     private int mPageCount = 0;
-    private final Page mPreviousPage = new Page();
-    private final Page mCurrentPage = new Page();
-    private final Page mNextPage = new Page();
     private View mEmptyView;
     private OnFlipListener mOnFlipListener;
     private OnOverFlipListener mOnOverFlipListener;
@@ -99,25 +117,15 @@ public class FlipView extends FrameLayout {
     };
     private OverFlipMode mOverFlipMode;
     private OverFlipper mOverFlipper;
-    // clipping rects
-    private final Rect mTopRect = new Rect();
-    private final Rect mBottomRect = new Rect();
-    private final Rect mRightRect = new Rect();
-    private final Rect mLeftRect = new Rect();
-    // used for transforming the canvas
-    private final Camera mCamera = new Camera();
-    private final Matrix mMatrix = new Matrix();
-    // paints drawn above views when flipping
-    private final Paint mShadowPaint = new Paint();
-    private final Paint mShadePaint = new Paint();
-    private final Paint mShinePaint = new Paint();
 
     public FlipView(Context context) {
         this(context, null);
     }
+
     public FlipView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
+
     public FlipView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 

@@ -1,7 +1,9 @@
 package se.emilsjolander.flipview;
 
 import android.graphics.Canvas;
-import android.support.v4.widget.EdgeEffectCompat;
+
+import androidx.core.widget.EdgeEffectCompat;
+//import android.support.v4.widget.EdgeEffectCompat;
 
 public class GlowOverFlipper implements OverFlipper {
 

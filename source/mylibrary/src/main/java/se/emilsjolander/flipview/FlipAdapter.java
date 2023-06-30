@@ -9,14 +9,17 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.cfgame.mylibrary.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FlipAdapter extends BaseAdapter implements OnClickListener {
 
     private final LayoutInflater inflater;
-    private Callback callback;
     private final List<Item> items = new ArrayList<Item>();
+    private Callback callback;
+
     public FlipAdapter(Context context) {
         inflater = LayoutInflater.from(context);
         for (int i = 0; i < 10; i++) {
@@ -76,17 +79,16 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.first_page:
-                if (callback != null) {
-                    callback.onPageRequested(0);
-                }
-                break;
-            case R.id.last_page:
-                if (callback != null) {
-                    callback.onPageRequested(getCount() - 1);
-                }
-                break;
+        if (v.getId() == R.id.first_page) {
+            if (callback != null) {
+                callback.onPageRequested(0);
+            }
+        }
+
+        if (v.getId() == R.id.last_page) {
+            if (callback != null) {
+                callback.onPageRequested(getCount() - 1);
+            }
         }
     }
 
