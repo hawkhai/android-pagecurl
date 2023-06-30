@@ -1,3 +1,4 @@
+include ':myflip'
 include ':mylibrary'
 include ':app'
 rootProject.name = "pagecurl"
