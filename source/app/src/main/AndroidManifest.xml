@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pagecurl">
-        <activity android:name="fi.harism.curl.CurlActivity" android:exported="true"
+        <activity android:name="se.emilsjolander.flipview.MainActivity" android:exported="true"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

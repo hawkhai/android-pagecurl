@@ -12,6 +12,7 @@ import se.emilsjolander.flipview.FlipAdapter.Callback;
 import se.emilsjolander.flipview.FlipView.OnFlipListener;
 import se.emilsjolander.flipview.FlipView.OnOverFlipListener;
 
+// se.emilsjolander.flipview.MainActivity
 public class MainActivity extends Activity implements Callback, OnFlipListener, OnOverFlipListener {
 
     private FlipView mFlipView;
@@ -20,7 +21,7 @@ public class MainActivity extends Activity implements Callback, OnFlipListener, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_lib);
 
         mFlipView = (FlipView) findViewById(R.id.flip_view);
         mAdapter = new FlipAdapter(this);
