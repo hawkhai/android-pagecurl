@@ -29,7 +29,7 @@ import com.cfgame.pagecurl.R;
 
 /**
  * Simple Activity for curl testing.
- *
+ * fi.harism.curl.CurlActivity
  * @author harism
  */
 public class CurlActivity extends Activity {
