@@ -169,7 +169,7 @@ public class CurlActivity extends Activity {
                 case 4:
                     Bitmap front = loadBitmap(width, height, 0);
                     page.setTexture(front, CurlPage.SIDE_BOTH);
-                    page.setColor(Color.argb(127, 255, 255, 255),
+                    page.setColor(Color.argb(10, 255, 255, 255),
                             CurlPage.SIDE_BACK);
                     break;
             }

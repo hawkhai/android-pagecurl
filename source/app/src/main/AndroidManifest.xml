@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pagecurl">
 
-        <activity android:name="com.aphidmobile.flip.demo.MainActivity" android:exported="true"
+        <activity android:name="fi.harism.curl.CurlActivity" android:exported="true"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
